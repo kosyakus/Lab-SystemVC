@@ -71,7 +71,6 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
         }
         
         
-        alertController.popoverPresentationController?.sourceView = sender
         present(alertController, animated: true, completion: nil)
     }
     
