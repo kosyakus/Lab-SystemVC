@@ -46,15 +46,47 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
     
     @IBAction func choosePhotoButtonTapped(_ sender: Any) {
         
+        let imagePicker = UIImagePickerController() // instance
+        imagePicker.delegate = self // set this VC as delegate
+        
         let alertController = UIAlertController(title: "Some text", message: nil, preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: { action in
+                imagePicker.sourceType = .camera
+                self.present(imagePicker, animated: true, completion: nil)
+            })
+            alertController.addAction(cameraAction)
+        }
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let photoLibraryAction = UIAlertAction(title: "photo library", style: .default, handler: { action in
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true, completion: nil)
+            })
+            alertController.addAction(photoLibraryAction)
+        }
+        
         
         alertController.popoverPresentationController?.sourceView = sender
         present(alertController, animated: true, completion: nil)
     }
+    
+    // func for returning the selected photo
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = selectedImage
+            dismiss(animated: true, completion: nil)
+            updateView()
+        }
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func actionButtonTapped(_ sender: Any) {
         
