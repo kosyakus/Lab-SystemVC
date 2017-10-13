@@ -46,6 +46,14 @@ class FurnitureDetailViewController: UIViewController {
     
     @IBAction func choosePhotoButtonTapped(_ sender: Any) {
         
+        let alertController = UIAlertController(title: "Some text", message: nil, preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        
+        alertController.popoverPresentationController?.sourceView = sender
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func actionButtonTapped(_ sender: Any) {
