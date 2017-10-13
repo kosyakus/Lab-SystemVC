@@ -76,10 +76,12 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
     
     // func for returning the selected photo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.image = selectedImage
-            dismiss(animated: true, completion: nil)
-            updateView()
+        
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {return}
+        furniture?.imageData = UIImagePNGRepresentation(image)
+        
+        dismiss(animated: true) {
+            self.updateView()
         }
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -88,6 +90,15 @@ class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDe
     
     
     @IBAction func actionButtonTapped(_ sender: Any) {
+        
+        guard let furniture = furniture else {return}
+        var items: [Any] = ["\(furniture.name): \(furniture.description)"]
+        if let image = choosePhotoButton.backgroundImage(for: .normal) {
+            items.append(image)
+        }
+        // add sharing to another app using ActivityVC
+        let activityController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(activityController, animated: true, completion: nil)
         
     }
 
