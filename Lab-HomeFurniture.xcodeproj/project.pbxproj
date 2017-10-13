@@ -12,6 +12,8 @@
 		8477B8881F90F5A600C4B14E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8477B8861F90F5A600C4B14E /* Main.storyboard */; };
 		8477B88A1F90F5A600C4B14E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8477B8891F90F5A600C4B14E /* Assets.xcassets */; };
 		8477B88D1F90F5A600C4B14E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8477B88B1F90F5A600C4B14E /* LaunchScreen.storyboard */; };
+		8477B8951F90F61E00C4B14E /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477B8941F90F61E00C4B14E /* Room.swift */; };
+		8477B8971F90F63D00C4B14E /* Furniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8477B8961F90F63D00C4B14E /* Furniture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		8477B8891F90F5A600C4B14E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8477B88C1F90F5A600C4B14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8477B88E1F90F5A600C4B14E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8477B8941F90F61E00C4B14E /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		8477B8961F90F63D00C4B14E /* Furniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furniture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				8477B8821F90F5A600C4B14E /* AppDelegate.swift */,
 				8477B8841F90F5A600C4B14E /* ViewController.swift */,
 				8477B8861F90F5A600C4B14E /* Main.storyboard */,
+				8477B8941F90F61E00C4B14E /* Room.swift */,
+				8477B8961F90F63D00C4B14E /* Furniture.swift */,
 				8477B8891F90F5A600C4B14E /* Assets.xcassets */,
 				8477B88B1F90F5A600C4B14E /* LaunchScreen.storyboard */,
 				8477B88E1F90F5A600C4B14E /* Info.plist */,
@@ -138,6 +144,8 @@
 			files = (
 				8477B8851F90F5A600C4B14E /* ViewController.swift in Sources */,
 				8477B8831F90F5A600C4B14E /* AppDelegate.swift in Sources */,
+				8477B8971F90F63D00C4B14E /* Furniture.swift in Sources */,
+				8477B8951F90F61E00C4B14E /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
