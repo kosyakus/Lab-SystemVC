@@ -10,6 +10,11 @@ import UIKit
 
 class FurnitureDetailViewController: UIViewController {
     
+    @IBOutlet weak var choosePhotoButton: UIButton!
+    
+    @IBOutlet weak var furnitureTitleLabel: UILabel!
+    @IBOutlet weak var furnitureDescriptionLabel: UILabel!
+    
     var furniture: Furniture?
 
     override func viewDidLoad() {
