@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FurnitureDetailViewController: UIViewController {
+class FurnitureDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var choosePhotoButton: UIButton!
     
